@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "Please input a string: "
 read string
 revstr=`echo $string | rev`
