@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ping raspberrypi.snopoint.com | grep "time" && echo "It's alive"
+ping raspberrypi.snopoint.com | grep -c 1 "time" && echo "It's alive"
