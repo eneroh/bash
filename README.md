@@ -20,7 +20,7 @@ which <program>
 Displays a place where you can find the program
 
 ```bash
-whereis <program
+whereis <program>
 ```
 <br>
 Displays ALL places where you can find the program
