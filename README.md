@@ -25,3 +25,9 @@ whereis <program>
 <br>
 Displays ALL places where you can find the program
 
+```bash
+less
+```
+<br>
+Read a file 1 page at a time
+
