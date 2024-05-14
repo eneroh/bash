@@ -31,3 +31,32 @@ less
 <br>
 Read a file 1 page at a time
 
+```bash
+grep
+```
+<br>
+Displays line
+
+```bash
+awk
+```
+<br>
+Displays specific word/words
+
+```bash
+ps -aux | grep <program>
+```
+<br>
+Locate specific process
+
+```bash
+kill -9 <pid>
+```
+<br>
+Kill specific process
+
+```bash
+pkill -f <process>
+```
+Kill specific process
+
