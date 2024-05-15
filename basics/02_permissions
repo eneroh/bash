@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+echo "Hello world!"
+
+#ls -l
+
+# user, group, others
+# r = read
+# w = write
+# x = execute
+# rw- (user) r-- (group) r-- (others)
+
+chmod u+x ./hello.sh
+
+user rwx (user) r-- (group) r-- (others)
