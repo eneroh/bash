@@ -187,7 +187,7 @@ Stdout can be sent to a file output
 ```bash
 ls --help >> ls-help.txt
 ```
->> appends to end of file
+appends to end of file
 
 ```bash
 fzf
