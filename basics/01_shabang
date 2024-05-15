@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # shabang
+# Default to addding this at the top of your scripts (just below the shebang)
+set -euo pipefail
 
 #!/bin/bash <-- less portable, not every system will have that path
 
