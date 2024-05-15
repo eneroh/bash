@@ -1,0 +1,16 @@
+./blackout
+
+blackout
+command not found
+
+# blackout isn't in the $PATH
+
+echo $PATH
+
+a command runs and the shell will check for the command in the dirs in $PATH. Command not found gets displayed if not sighted in $PATH.
+
+# Add script directory to the path
+> export PATH=$PATH:$HOME/.scripts/bin
+> blackout
+
+# Make sure to add it to your ~/.bashrc or ~/.zshrc if you want it to run always.
