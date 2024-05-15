@@ -1,0 +1,9 @@
+video_input="$1"
+audio_input="$2"
+output="$3"
+
+ffmpeg -i "$video_input" -i "$audio_input" -c:v copy - c:a aac -map0:v:0 -map 1:a:0 "$output"
+
+Alternatively:
+
+ffmpeg -i "$1" -i "$2" -c:v copy - c:a aac -map0:v:0 -map 1:a:0 "$3"
