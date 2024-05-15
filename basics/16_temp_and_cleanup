@@ -1,0 +1,12 @@
+# Make temporary file
+
+tempfile=$(mktemp)
+trap "rm -f $tempfile" EXIT
+
+echo "Hello world!" > $tempfile
+
+# Make temporary directory
+
+tempfile=$(mktemp -d)
+trap "rm -f $tempfile" EXIT
+echo "Hello world! (from inside a tempdir)" > "$tempfile/ hello"
