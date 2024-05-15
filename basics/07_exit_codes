@@ -1,0 +1,13 @@
+exit code 0 -> Success
+exit code n (with n being anything else -> Failure
+
+if [[ ...some failure condition ]]; then
+  echo "Something broke"
+  exit 1
+fi
+
+if grep -q "ERROR" "logs.txt"; then
+  echo "You've got some errors in your logs!"
+else
+  echo "All is fine in the world."
+fi
