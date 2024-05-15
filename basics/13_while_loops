@@ -1,0 +1,20 @@
+counter=0
+while [[ $counter -lt 5 ]]; do
+  echo $counter
+  ((counter++))
+done
+
+# Wait until true
+
+while true; do
+  status=$()
+  if [[ "$status" == "Running" ]]; then
+    break
+  else
+    echo "Waiting for <item> to get into a running state"
+    sleep 1
+  fi
+  done
+  echo "<item> is running"
+
+  
