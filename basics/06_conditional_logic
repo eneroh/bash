@@ -1,0 +1,7 @@
+if [[ some_condition ]]; then
+  echo "This condition is true"
+elif [[ some_other_condition ]]; then
+  echo "This other conditon is true"
+else
+  echo "Non of the conditions were true"
+fi
