@@ -216,3 +216,7 @@ Find the biggest files/directories
 ```
 Returns previous command
 
+```bash
+ping -c 1 "github.com" | grep time && echo "it's alive"
+```
+Conditional response, if the pin is successful and if grep sees "time", then the terminal returns the word "it's alive"
