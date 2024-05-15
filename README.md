@@ -104,7 +104,9 @@ rm -r
 rm -rf
 ```
 Deletes file
+<br>
 Deletes directory
+<br>
 Deletes files recursively and forcefully
 
 ```bash
@@ -140,6 +142,7 @@ sort
 sort -nr
 ```
 Sorts text contents, default is alphabetic
+<br>
 Sorts text contents in numerical, reverse order
 
 ```bash
@@ -153,6 +156,7 @@ tail
 tail -f
 ```
 Displays the last 12 lines of a file
+<br>
 Display the last 12 lines but FOLLOWS as new lines are added, used by devs for logs
 
 ```bash
@@ -177,6 +181,7 @@ Subshell
 ls --help > ls-help.txt
 ```
 Overwrites over the file
+<br>
 Stdout can be sent to a file output
 
 ```bash
@@ -198,6 +203,7 @@ Find a command, then read it's related man page
 alias <aliasname>="<command>"
 ```
 Stdout can be sent to a file output
+<br>
 Can be placed into zshrc or bashrc, available every session
 
 ```bash
