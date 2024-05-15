@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# shabang
+
+#!/bin/bash <-- less portable, not every system will have that path
+
+echo "Hello Youtube!"
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
