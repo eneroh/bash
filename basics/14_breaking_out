@@ -1,1 +1,80 @@
+# spliting script into multiple files
+# mainly so the script is easier to comprehend
 
+no namespacing or modules
+
+# provisioner.sh
+echo "Provisioning env"
+./instance.sh
+./dns.sh
+echo "Provisioning complete!"
+
+# instance.sh
+doctl ... # Pretend this does some work to provision a VM
+
+# dns.sh
+doctl ... # Pretend this configures the DNS
+
+
+-------------
+
+# pass in arguments
+
+# provisioner.sh
+echo "Provisioning env"
+./instance.sh nyc3 2gb
+./dns.sh example.com
+echo "Provisioning complete!"
+
+# instance.sh
+region=$1
+size=$2
+doctl ... # Pretend this does some work to provision a VM
+
+# dns.sh
+domain=$1
+doctl ... # Pretend this configures the DNS
+
+--------------------
+
+# sourcing (same shell)
+. ./script.sh
+
+# sub-shell
+./script.sh
+
+# Sourcing the script (share the same shell)
+
+# script1.sh
+favourite_color="green"
+echo $favourite_color
+. ./script2.sh
+echo $favourite_color
+
+# script2.sh
+echo $favourite_color
+favourite_color="blue"
+echo $favourite_color
+
+green
+green
+blue
+blue
+
+# subshell
+
+# script1.sh
+favourite_color="green"
+echo $favourite_color
+. ./script2.sh
+echo $favourite_color
+
+# script2.sh
+echo $favourite_color
+favourite_color="blue"
+echo $favourite_color
+
+green
+  # If we had set -u script2.sh would've exited
+blue
+green
