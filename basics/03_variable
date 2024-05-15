@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+name="World"
+another = "Universe" # Syntax error
+
+echo 'Hello $name!'
+echo 'hello ${#name}'
+
+# gives length of variable (5 letters) presents 5
+
+default value:
+name=''
+echo "Hello ${name:-"Anonymous"}!"
+echo $name 
+# will still be empty
+
+# to fix this, add an = and it makes the variable the default
+echo "Hello ${name:="Anonymous"}!"
+echo $name
