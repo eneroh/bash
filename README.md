@@ -127,7 +127,7 @@ Manual page for a specific command
 
 ```bash
 find
-find * -name "*<file*"
+find * -name "*<file*>"
 ```
 Find files or directories
 
