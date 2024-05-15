@@ -1,0 +1,5 @@
+my_arr=(1 2 3 4 5)
+
+echo ${my_arr[0]} # 1
+echo ${my_arr[@]} # @ refers to all elements (1 2 3 4 5)
+echo ${#my_arr[@]} # Prints length of array (5)
