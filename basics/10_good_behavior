@@ -1,0 +1,52 @@
+# Make bash more sane
+
+set -euo pipefail
+
+set -e # Exit on error
+set -u # Exit on unset variable
+set -o pipefail # Exit on pipe fail
+
+# Without set -e
+false # This command fails
+echo "This line runs, even though it probably shouldn't"
+
+# With set -e
+set -e
+
+false # This command fails
+echo "This line won't run"
+
+Conditional execution
+command1 && command2 # If the first command succeeds, perform the next command
+
+command1 || command2 # If the first fails, perform the next command
+
+false || exit 1 # If the command fails, properly exit
+echo "This line no longer runs"
+
+# With set -e
+set -e
+
+false || true # Ignore the error and keep rolling
+echo "This line will run"
+
+# Without set -u
+echo "Hello $name" # name is undefined but it'll just run fine
+echo "This line runs, even though it probably shouldn't"
+
+# With set -u
+set -u
+
+echo "Hello $name" # name is undefined, so it'll exit
+echo "This line won't run"
+
+# With set -o pipefail
+set -e # REmember, with -e it'll exit on failure
+
+false | echo "Hello!" # The failure from 'false' gets lost in the pipeline
+echo "This line runs, even though it probably shouldn't"
+
+# With set -o pipefail
+
+false | echo "Hello!" # The failure from 'false' is detected and the script exists
+echo "This line won't run"
