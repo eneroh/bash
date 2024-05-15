@@ -3,6 +3,8 @@
 # Default to addding this at the top of your scripts (just below the shebang)
 set -euo pipefail
 
+# Errors are your friend!
+
 #!/bin/bash <-- less portable, not every system will have that path
 
 echo "Hello Youtube!"
