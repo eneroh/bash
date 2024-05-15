@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+$() <- Command substitution
+var=$(pwd)
+echo $var
+/home/<user>/workspace/videos/bash
+image_url=$(curl -s "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY" | jq -r '.hdurl')
+curl -s "$image_url" -o "apod.jpg"
+
+<() <- Process substitution
+diff <(ls ./v1) <(ls ./v2)
+
+$(()) <- Arithmetic expansion
+$((3+4))
+7
