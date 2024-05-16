@@ -220,3 +220,22 @@ Returns previous command
 ping -c 1 "github.com" | grep time && echo "it's alive"
 ```
 Conditional response, if the ping is successful and if grep sees "time", then the terminal returns the word "it's alive"
+
+```bash
+ssh <user>@<host>/<ip>
+```
+Remoting tool to remote onto specific devices
+
+```bash
+scp en@archpc:~/ en@archlt:~/
+```
+scp or secure copy and paste can be utilized to move a file or multiple files between two different devices
+
+```bash
+crontab
+crontab -e
+crontab -l
+```
+Task scheduler for specific distros (particularly debian based)
+Task scheduler editor (guided)
+Dispalys all tasks scheduled by user
