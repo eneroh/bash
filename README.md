@@ -277,3 +277,12 @@ fi
 echo "Continuing..."
 ```
 Reads the user input of Y or n then provides response
+
+```bash
+chmod
+chmod u+x ./hello.sh
+```
+Change mode permissions
+Provides user execute permissions
+Can also be performed with numbers (octal)
+Ties into ls -l
