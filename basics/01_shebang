@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # shebang
-# Default to addding this at the top of your scripts (just below the shebang)
+# Default to adding this at the top of your scripts (just below the shebang)
 set -euo pipefail
 
 # Errors are your friend!
