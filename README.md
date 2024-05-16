@@ -254,3 +254,19 @@ Text editor
 killall <program>
 ```
 Kill all instances of program
+
+```bash
+echo "What is your name?"
+read -r name
+echo "Hello $name!"
+```
+Reads user input in the command mentioned, then reflects that command
+
+```bash
+read -p "Do you want to continue (Y/n) " resp
+if [[ $resp != "Y" ]]; then
+  exit 1
+fi
+echo "Continuing..."
+```
+Reads the user input of Y or n then provides response
