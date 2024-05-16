@@ -292,3 +292,23 @@ diff <file1> <file2>
 ```
 Compares the difference between two different different
 
+```bash
+if [[ some_condition ]]; then
+  echo "This condition is true"
+elif [[ some_other_condition ]]; then
+  echo "This other conditon is true"
+else
+  echo "Non of the conditions were true"
+fi
+```
+if conditional statement layout
+
+```bash
+exit
+```
+Exit program
+Can also be used in scripts to escape when things go wrong
+
+```bash
+
+```
