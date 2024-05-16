@@ -239,3 +239,13 @@ crontab -l
 Task scheduler for specific distros (particularly debian based)
 Task scheduler editor (guided)
 Dispalys all tasks scheduled by user
+
+```bash
+vim <file>
+```
+Text editor
+
+```bash
+nano <file>
+```
+Text editor
