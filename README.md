@@ -227,7 +227,7 @@ ssh <user>@<host>/<ip>
 Remoting tool to remote onto specific devices
 
 ```bash
-scp en@archpc:~/ en@archlt:~/
+scp <user>@<host>:~/ <user>@<device>:~/
 ```
 scp or secure copy and paste can be utilized to move a file or multiple files between two different devices
 
