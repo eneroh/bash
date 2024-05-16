@@ -1,6 +1,13 @@
 # bash
 
 ## Summary
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+```
+Best way to start off bash scripts
+
 ```bash
 history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
 ```
