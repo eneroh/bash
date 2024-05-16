@@ -49,12 +49,12 @@ Locate specific process
 ```bash
 kill -9 <pid>
 ```
-Kill specific process
+Kill specific process by process no.
 
 ```bash
 pkill -f <process>
 ```
-Kill specific process
+Kill specific process by name
 
 ```bash
 ls
