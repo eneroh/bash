@@ -286,3 +286,9 @@ Change mode permissions
 Provides user execute permissions
 Can also be performed with numbers (octal)
 Ties into ls -l
+
+```bash
+diff <file1> <file2>
+```
+Compares the difference between two different different
+
