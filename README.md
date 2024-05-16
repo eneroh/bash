@@ -249,3 +249,8 @@ Text editor
 nano <file>
 ```
 Text editor
+
+```bash
+killall <program>
+```
+Kill all instances of program
