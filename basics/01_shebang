@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# shabang
+# shebang
 # Default to addding this at the top of your scripts (just below the shebang)
 set -euo pipefail
 
