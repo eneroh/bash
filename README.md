@@ -310,5 +310,11 @@ Exit program
 Can also be used in scripts to escape when things go wrong
 
 ```bash
-
+finger <user>
 ```
+Shows complete account information on debian based systems
+
+```bash
+w
+```
+Shows user login info and activity
