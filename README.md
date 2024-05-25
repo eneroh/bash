@@ -1,38 +1,13 @@
 # bash
 
 ## Summary
+This document will display my bash scripting knowledge and act as a cheatsheet for projects that require bash.
 
-```bash
-#!/usr/bin/env bash
-set -euo pipefail
-```
-Best way to start off bash scripts
-
-```bash
-history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
-```
-Displays the top 10 most used bash terminal commands
-
-```bash
-whatis <program>
-```
-Displays program info
-
-```bash
-which <program>
-```
-Displays a place where you can find the program
-
-```bash
-whereis <program>
-```
-Displays ALL places where you can find the program
-
+## Commands
 ```bash
 less
 ```
 Scrollable human readable viewer
-
 ```bash
 more
 ```
@@ -49,9 +24,18 @@ awk
 Displays specific word/words, column specific
 
 ```bash
-ps -aux | grep <program>
+which <program>
 ```
-Locate specific process
+Displays a place where you can find the program
+
+```bash
+whereis <program>
+```
+Displays ALL places where you can find the program
+```bash
+whatis <program>
+```
+Displays program info
 
 ```bash
 kill -9 <pid>
@@ -179,34 +163,28 @@ ls | grep 'l' | xargs du -sh
 Takes the content and splits it into chunks then passes it into an argument to what command you specify
 
 ```bash
-$(<command>)
-echo "My current directory is: $(pwd)"
-```
-Subshell
-
-```bash
-ls --help > ls-help.txt
-```
-Overwrites over the file
-<br>
-Stdout can be sent to a file output
-
-```bash
-ls --help >> ls-help.txt
-```
-appends to end of file
-
-```bash
 fzf
 ```
 Fuzzy finder
 
 ```bash
-compgen -c | fzf | xargs man
+exit
 ```
-Find a command, then read it's related man page
+Exit program
+Can also be used in scripts to escape when things go wrong
 
 ```bash
+finger <user>
+```
+Shows complete account information on debian based systems
+
+```bash
+w
+```
+Shows user login info and activity
+
+```bash
+alias
 alias <aliasname>="<command>"
 ```
 Stdout can be sent to a file output
@@ -214,19 +192,9 @@ Stdout can be sent to a file output
 Can be placed into zshrc or bashrc, available every session
 
 ```bash
-du -ah . | sort -hr | head -n 10
-```
-Find the biggest files/directories
-
-```bash
 !!
 ```
 Returns previous command
-
-```bash
-ping -c 1 "github.com" | grep time && echo "it's alive"
-```
-Conditional response, if the ping is successful and if grep sees "time", then the terminal returns the word "it's alive"
 
 ```bash
 ssh <user>@<host>/<ip>
@@ -263,6 +231,74 @@ killall <program>
 Kill all instances of program
 
 ```bash
+chmod
+chmod u+x ./hello.sh
+```
+Change mode permissions
+Provides user execute permissions
+Can also be performed with numbers (octal)
+Ties into ls -l
+
+```bash
+diff <file1> <file2>
+```
+Compares the difference between two different different
+
+
+
+## Scripts
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+```
+Best way to start off bash scripts
+
+```bash
+history | awk '{print $2}' | sort | uniq -c | sort -nr | head -10
+```
+Displays the top 10 most used bash terminal commands
+
+```bash
+ps -aux | grep <program>
+```
+Locate specific process
+
+```bash
+$(<command>)
+echo "My current directory is: $(pwd)"
+```
+Subshell
+
+```bash
+>
+ls --help > ls-help.txt
+```
+Overwrites over the file
+<br>
+Stdout can be sent to a file output
+
+```bash
+ls --help >> ls-help.txt
+```
+appends to end of file
+
+```bash
+compgen -c | fzf | xargs man
+```
+Find a command, then read it's related man page
+
+```bash
+du -ah . | sort -hr | head -n 10
+```
+Find the biggest files/directories
+
+```bash
+ping -c 1 "github.com" | grep time && echo "it's alive"
+```
+Conditional response, if the ping is successful and if grep sees "time", then the terminal returns the word "it's alive"
+
+```bash
 echo "What is your name?"
 read -r name
 echo "Hello $name!"
@@ -279,20 +315,6 @@ echo "Continuing..."
 Reads the user input of Y or n then provides response
 
 ```bash
-chmod
-chmod u+x ./hello.sh
-```
-Change mode permissions
-Provides user execute permissions
-Can also be performed with numbers (octal)
-Ties into ls -l
-
-```bash
-diff <file1> <file2>
-```
-Compares the difference between two different different
-
-```bash
 if [[ some_condition ]]; then
   echo "This condition is true"
 elif [[ some_other_condition ]]; then
@@ -302,19 +324,3 @@ else
 fi
 ```
 if conditional statement layout
-
-```bash
-exit
-```
-Exit program
-Can also be used in scripts to escape when things go wrong
-
-```bash
-finger <user>
-```
-Shows complete account information on debian based systems
-
-```bash
-w
-```
-Shows user login info and activity
