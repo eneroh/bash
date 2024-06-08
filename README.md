@@ -324,3 +324,14 @@ else
 fi
 ```
 if conditional statement layout
+
+```bash
+ls | grep '<word>'
+```
+Look for specific file containing specific word or file format
+
+```bash
+cat <file> | grep 'word'
+```
+Look for specific phrase/word in specified file
+
