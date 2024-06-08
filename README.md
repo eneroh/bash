@@ -335,3 +335,7 @@ cat <file> | grep 'word'
 ```
 Look for specific phrase/word in specified file
 
+```bash
+kill $(ps aux|grep <item to kill>)
+```
+Kills all instances of program
