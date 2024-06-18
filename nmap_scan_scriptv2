@@ -1,6 +1,12 @@
 #!/bin/zsh
 
-#presets
+# okay so I've been at this for a while and reviewing the ports list option makes this script almost impossible, the logic hurts my brain and it will take MANY cases or if statements to continue the port selection portion of this script AND this doesn't include -sC, -sV, -sS, -v, -T<X> AND MORE.
+# instead I am focusing on a preset nmap script instead, which will make my job significantly more easier
+# === idea: presets ===
+# user input: targetIP
+# port specific with and without timing, with and without scan tacs nmap options
+# host discovery with and without options /24 included at end of query
+# basic scan without any tacs at all
 
 x=1
 
