@@ -25,10 +25,7 @@ fi
 if [[ $portSpecific = 1 ]]
 then
 echo "Top 1000 selected"
-portPref="-p"
-read portPref
-echo $portPref
-nmap $portPref $targetIP
+nmap -p $targetIP
 elif [[ $portSpecific = 2 ]]
 then
 echo "-p-"
