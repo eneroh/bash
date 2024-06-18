@@ -1,5 +1,70 @@
 #!/bin/zsh
 
+#presets
+
+x=1
+
+while [ $x -eq 1 ];
+  do
+    echo "Input targetIP (X.X.X.X): "
+    read targetIP
+    echo "targetIP $targetIP [Y/n]"
+    read targetIPresp
+    if [[ $targetIPresp != [Yy] ]]
+      then
+      break
+    else
+      echo "Would you like to add more parameters? [Y/n]"
+      read parameterResp
+    fi
+    if [[ $parameterResp != [Yy] ]]
+      then
+      echo $x
+      nmap $targetIP
+      break
+    else
+      echo "Would you like to add port/s? [Y/n]"
+      read portResp
+    fi
+    if [[ $portResp != [Yy] ]]
+      then
+      nmap $targetIP
+      # add prompt for other items as well
+      break
+    else
+      echo "Top 1000, all port scan or specific ports? [1/2/3] "
+      read portSpecific
+    fi
+    if [[ $portSpecific = 1 ]]
+      then
+      echo "Top 1000 selected"
+      nmap $targetIP
+      break
+    elif [[ $portSpecific = 2 ]]
+    then
+      echo "-p-"
+      nmap -p- $targetIP
+      break
+    elif [[ $portSpecific = 3 ]]
+    then
+      echo "Which port/s?\n1.20\n2.22\n3.22\n4.23\m5.24\n6.25\n7.53\m8.80\n9.88\n10.110\n11.443\n12.445\n13.3306\n14.3389\n"
+      read -r portInput portInputTwo
+      echo $portInput $portInputTwo
+      portInput="-p$portInput $portInputTwo "
+      echo $targetIP $portInput $portInputTwo
+      nmap $portInput $portInputTwo $targetIP
+      echo $x
+      break
+    else
+      echo "Jumped to last"
+      echo "Please input a valid response! "
+    fi
+  done
+
+===========================
+
+#!/bin/zsh
+
 echo "Input targetIP: X.X.X.X "
 read targetIP
 echo "targetIP $targetIP [Y/n]"
