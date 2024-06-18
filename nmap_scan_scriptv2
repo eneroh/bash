@@ -1,0 +1,88 @@
+#!/bin/zsh
+
+echo "Input targetIP: X.X.X.X "
+read targetIP
+echo "targetIP $targetIP [Y/n]"
+read targetIPresp
+if [[ $targetIPresp != [Yy] ]]
+then exit 1
+else
+echo "Would you like to add more parameters? [Y/n]"
+read parameterResp
+fi
+if [[ $parameterResp != [Yy] ]]
+then nmap $targetIP
+else
+echo "Would you like to add port/s? [Y/n]"
+read portResp
+fi
+if [[ $portResp != [Yy] ]]
+then
+else
+echo "Top 1000, all port scan or specific ports? [1/2/3] "
+read portSpecific
+fi
+if [[ $portSpecific = 1 ]]
+then
+echo "Top 1000 selected"
+portPref="-p"
+read portPref
+echo $portPref
+nmap $portPref $targetIP
+elif [[ $portSpecific = 2 ]]
+then
+echo "-p-"
+nmap -p- $targetIP
+elif [[ $portSpecific = 3 ]]
+then
+echo "Which port/s? (22,80) "
+read -r portInput portInputTwo
+echo $portInput $portInputTwo
+portInput="-p$portInput $portInputTwo"
+echo $targetIP $portInput $portInputTwo
+nmap $portInput $portInputTwo $targetIP
+else
+echo "Please input a valid response! "
+fi
+
+Adding more functionality
+
+=== ideas ===
+echo “Input targetIP: 10.0.0.138”
+read targetIP
+echo “Is this correct? $targetIP [Y/n]”
+read targetIPresp
+If [[ $targetIPresp -ne [Yy] ]]
+then
+exit 1
+else
+echo “Would you like to add more parameters? [Y/N]”
+read parameterResp
+if [[ $parameterResp -ne [Yy] ]]
+then
+nmap $targetIP
+else
+echo “Would you like to add port/s? “
+read portResp
+if [[ $portResp -ne [Yy] ]]
+then
+else
+echo “Top 1000, All Port scan or specific ports? [1/2/3]”
+read portSpecific
+if [[ $portSpecific -eq 1 ]]
+
+elif [[ $portSpecific -eq 2 ]]
+
+elif [[ $portSpecific -eq 3 ]]
+
+else
+echo “Please input valid response!\n”
+return 1
+
+echo “Input ports: [XX/XXX/XXX] ”
+
+
+nmap $port $stealthScan $defaultScripts $versioning $operatingSystems $timing $verbosity $targetIP
+
+Nmap -p80,443,3306,445,3389 -sS -sC -sV -O -T4 -v 10.0.0.138
+
