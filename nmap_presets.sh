@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+
 echo "Welcome to eneroh's nmap presets!\n"
 echo "1. Basic scan (nmap <targetIP) [X.X.X.X]: "
 echo "2. Host discovery (nmap -sn $targetIP) [X.X.X.0/CIDR]: "
@@ -12,7 +13,8 @@ read resp
 num='^[0-9]+$'
 tIPstandard='^[0-9]+[.]+[0-9]+[.]+[0-9]+[.]+[0-9]$'
 
-if [ $resp = 1 ];
+if [[ $resp = 1 ]];
+  then
   echo "Input targetIP: "
   read targetIP
   if [$targetIP != tIPstandard];
@@ -21,12 +23,13 @@ if [ $resp = 1 ];
   else
     nmap $targetIP
   fi
-elif [ $resp -ne $num ];
-  then
-  echo "Please input valid response!"
+  exit 1
+#elif [[ $resp ! $num ]];
+#  then
+#  echo "Please input valid response!"
 else
   echo "Please input valid response!"
-  echo "targetIP: $targeTIP [Y/n]"
+echo "targetIP: $targeTIP [Y/n]"
 fi
 
 #nmap $targetIP
