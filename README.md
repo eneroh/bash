@@ -244,7 +244,16 @@ diff <file1> <file2>
 ```
 Compares the difference between two different different
 
+```bash
+bc
+```
+Calculation language in terminal
 
+```bash
+SUBTRACT=$((640-354))
+echo $SUBTRACT
+```
+Perform calculations in terminal
 
 ## Scripts
 
