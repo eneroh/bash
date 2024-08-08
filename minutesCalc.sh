@@ -5,7 +5,7 @@
 # later features:
 # validation for 00 and 60
 # potential removal of negative symbol from result
-# inclusion of for, if and/or case functions depending
+# inclusion of for/while loop, if and/or case functions depending
 
 echo "Input first integer: "
 read mainInt
