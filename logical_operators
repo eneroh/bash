@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# so if statements are unnecessary, you can replace them with one line instead of the regular 3+ lines of code.
+
+# if [ -z "$EDITOR" ] && EDITOR=nano # if $EDITOR is zero set editor to nano
+#  EDITOR=nano
+# fi
+
+echo $EDITOR
+
+[ -z "$EDITOR" ] && EDITOR=nano
+
+echo $EDITOR
