@@ -242,7 +242,7 @@ Ties into ls -l
 ```bash
 diff <file1> <file2>
 ```
-Compares the difference between two different different
+Compares the difference between two different files
 
 ```bash
 bc
