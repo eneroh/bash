@@ -4,10 +4,10 @@
 #
 # Got a bit annoyed that my find function wasn't able to move things easily, so now I'm creating this script to make this process smoother
 # Features:
-# - User input a term search
-# - Confirmation move
+# - User input string search
+# - Confirmation of action at end
 # - clear variables
-# - cp instead of mv safety (moved a bunch of test files from /home/<user> and filled my test folder with junk T_T
+# - cp instead of mv safety (moved a bunch of test files from /home/<user> and filled my test folder with junk T_T)
 
 echo "Input original file/s directory [/home/<user>/<dir>]: "
 read origdir
