@@ -3,6 +3,7 @@
 ### find_mv.sh ###
 # purpose: All results with find function are copiable/moveable with a simple script
 # Got a bit annoyed that the find command wasn't able to move things easily, so now I'm creating this script to make this process smoother
+# Ultimately this is a 1 liner but I'm making it more complex
 ## Features: ##
 # - User input string search 
 # - Confirmation of action at end
