@@ -171,6 +171,7 @@ Fuzzy finder
 exit
 ```
 Exit program
+<br>
 Can also be used in scripts to escape when things go wrong
 
 ```bash
@@ -212,7 +213,9 @@ crontab -e
 crontab -l
 ```
 Task scheduler for specific distros (particularly debian based)
+<br>
 Task scheduler editor (guided)
+<br>
 Dispalys all tasks scheduled by user
 
 ```bash
@@ -254,6 +257,18 @@ SUBTRACT=$((640-354))
 echo $SUBTRACT
 ```
 Perform calculations in terminal
+
+```bash
+>&2
+```
+redirect stdout to stderr
+<br>
+generally the better place to send logging output that isn't the actual result of the computation
+
+```bash
+>/dev/mull
+```
+discards STDOUT or output
 
 ## Scripts
 
