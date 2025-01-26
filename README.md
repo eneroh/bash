@@ -266,7 +266,7 @@ redirect stdout to stderr
 generally the better place to send logging output that isn't the actual result of the computation
 
 ```bash
->/dev/mull
+>/dev/null
 ```
 discards STDOUT or output
 
