@@ -14,7 +14,7 @@ read destdir
 echo "Is this information correct? [Y/n]: "
 read resp1
 if [[ "$resp1" == [Yy] ]]; then
-	echo "Success!"
+	echo "Gathering results"
 	output=$(find $origdir -type f -name "*$teststring*" > test.txt >&2)
 	#readfile=$(cat test.txt | nl)
 	echo $readfile
