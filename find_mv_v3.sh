@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### find_mv_.sh ###
+### find_mv_v3.sh ###
 # script cleaning
 # - removal of unnecessary break in if loop
 # - Removal of mention in test.txt in output variable
