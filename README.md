@@ -311,6 +311,11 @@ Check for aliases
 <br>
 Checks nvim aliases, in this instance "vim" is an alias for nvim
 
+```bash
+alias 
+```
+As below, so below
+
 ## Scripts
 
 ```bash
