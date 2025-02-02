@@ -316,6 +316,11 @@ alias
 ```
 As above, so below
 
+```bash
+>&2
+```
+stderr output
+
 ## Scripts
 
 ```bash
