@@ -396,3 +396,9 @@ Look for specific phrase/word in specified file
 kill $(ps aux|grep <item to kill>)
 ```
 Kills all instances of program
+
+```bash
+if [ -z $variable ]; then
+fi
+```
+If statement - Check for null values
