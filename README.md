@@ -278,6 +278,14 @@ generally the better place to send logging output that isn't the actual result o
 ```
 discards STDOUT or output
 
+```bash
+uptime
+uptime -p
+```
+Displays uptime
+<br>
+Displays uptime in <b>p</b>retty format
+
 ## Scripts
 
 ```bash
