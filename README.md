@@ -314,7 +314,7 @@ Checks nvim aliases, in this instance "vim" is an alias for nvim
 ```bash
 alias 
 ```
-As below, so below
+As above, so below
 
 ## Scripts
 
