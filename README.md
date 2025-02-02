@@ -303,6 +303,14 @@ Everything
 <br>
 Thermal details
 
+```bash
+type <command>
+type nvim
+```
+Check for aliases
+<br>
+Checks nvim aliases, in this instance "vim" is an alias for nvim
+
 ## Scripts
 
 ```bash
