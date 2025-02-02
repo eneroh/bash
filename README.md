@@ -244,11 +244,19 @@ Kill all instances of program
 ```bash
 chmod
 chmod u+x ./hello.sh
+chmod [0-8][0-8][0-8] <file>
 ```
 Change mode permissions
+<br>
 Provides user execute permissions
+<br>
 Can also be performed with numbers (octal)
+<br>
 Ties into ls -l
+<br>
+Octal based permissions
+<br>
+755 is default
 
 ```bash
 diff <file1> <file2>
