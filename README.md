@@ -286,6 +286,23 @@ Displays uptime
 <br>
 Displays uptime in <b>p</b>retty format
 
+```bash
+acpi
+acpi -b
+acpi -i
+acpi -V
+acpi -t
+```
+Basic battery info
+<br>
+Basic battery info as well
+<br>
+Design capacity information
+<br>
+Everything
+<br>
+Thermal details
+
 ## Scripts
 
 ```bash
