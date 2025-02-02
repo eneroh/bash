@@ -19,9 +19,17 @@ grep
 Displays line, pattern matching
 
 ```bash
-awk
+awk '{print $1,$2,$3}'
 ```
 Displays specific word/words, column specific
+<br>
+$1 - column 1
+<br>
+$2 - column 2
+<br>
+$3 - column 3
+<br>
+etc.
 
 ```bash
 which <program>
