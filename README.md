@@ -282,6 +282,11 @@ redirect stdout to stderr
 generally the better place to send logging output that isn't the actual result of the computation
 
 ```bash
+ps
+```
+Display a snapshot of current processes
+
+```bash
 >/dev/null
 ```
 discards STDOUT or output
