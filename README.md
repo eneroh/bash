@@ -15,8 +15,14 @@ Same as less but can only move forward, not backward
 
 ```bash
 grep
+grep -e "<string>"
+grep -v "<string>"
 ```
 Displays line, pattern matching
+<br>
+Allows for regex or newline \n, useful for formatting
+<br>
+Find and exclude phrase/string
 
 ```bash
 awk '{print $1,$2,$3}'
