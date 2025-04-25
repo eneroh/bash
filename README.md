@@ -340,6 +340,21 @@ As above, so below
 ```
 stderr output
 
+```bash
+ps aux | grep "<application>" | awk '{print $2};'
+```
+Prints a list of linux related processes
+
+```bash
+kill -9 $(pidof <program>)`
+```
+kill specific app process
+
+```bash
+pidof <program>
+```
+Displays the process id of a specific program
+
 ## Scripts
 
 ```bash
