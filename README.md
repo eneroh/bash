@@ -355,6 +355,11 @@ pidof <program>
 ```
 Displays the process id of a specific program
 
+```bash
+journalctl -r
+```
+Reverse the journalctl output, displays the most recent events tied to the journal
+
 ## Scripts
 
 ```bash
