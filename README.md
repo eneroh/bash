@@ -360,6 +360,15 @@ journalctl -r
 ```
 Reverse the journalctl output, displays the most recent events tied to the journal
 
+```bash
+rsync
+rsync -rP <remote location> <local destination>
+```
+Remote file copying, useful for backup usage
+Useful for file copying across from separate machines on a local network
+-r Recursively (with folders)
+-P for progress display
+
 ## Scripts
 
 ```bash
