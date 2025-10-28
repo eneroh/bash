@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOG_DIR="/var/log"
-prune_Days=10
+PRUNE_DAYS=10
 
 sleep 100
 
