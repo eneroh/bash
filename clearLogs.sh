@@ -5,4 +5,4 @@ PRUNE_DAYS=10
 
 sleep 100
 
-find "/ssd${LOG_DIR}" -mindepth 1 -mtime +"$prune_Days" -delete
+find "/ssd${LOG_DIR}" -mindepth 1 -mtime +"$PRUNE_DAYS" -delete
