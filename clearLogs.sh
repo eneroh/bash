@@ -1,6 +1,6 @@
 #!/bin/bash
 
-variable_Location="/var/log"
+LOG_DIR="/var/log"
 prune_Days=10
 
 sleep 100
