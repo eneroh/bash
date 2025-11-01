@@ -3,6 +3,12 @@
 ## Summary
 This document will display my bash scripting knowledge and act as a cheatsheet for projects that require bash.
 
+## Notes ##
+.appimage files can be installed by making the file executable (see below)
+```bash
+sudo chmod +x arduino-ide_2.3.6_Linux_64bit.AppImage
+```
+
 ## Commands
 ```bash
 less
