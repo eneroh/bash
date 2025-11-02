@@ -14,6 +14,7 @@ logical operators
 && vs ||
 ```
 && - AND - if the first command finishes successfully, continue with the next command (zero)
+<br>
 || - if this command fails, continue with next command (non-zero)
 
 ## Commands
