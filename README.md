@@ -9,6 +9,13 @@ This document will display my bash scripting knowledge and act as a cheatsheet f
 sudo chmod +x arduino-ide_2.3.6_Linux_64bit.AppImage
 ```
 
+logical operators
+```bash
+&& vs ||
+```
+&& - AND - if the first command finishes successfully, continue with the next command (zero)
+|| - if this command fails, continue with next command (non-zero)
+
 ## Commands
 ```bash
 less
