@@ -60,6 +60,7 @@ Displays a place where you can find the program
 whereis <program>
 ```
 Displays ALL places where you can find the program
+
 ```bash
 whatis <program>
 ```
@@ -81,6 +82,19 @@ ls -latrh
 ls .config
 ```
 Lists the contents of the target directory
+
+```bash
+lsblk
+lsblk -io KNAME,NAME,TYPE,SIZE,MODEL
+```
+List block devices
+<br>
+List block devices and display the following as table information
+
+```bash
+lsusb
+```
+List usb devices
 
 ```bash
 cd
@@ -135,6 +149,7 @@ ln -s <file <file>
 Create a symbolic link to a file in a different location
 
 ```bash
+<command> --help
 ls --help
 ```
 Help page
@@ -152,7 +167,7 @@ Find files or directories
 
 ```bash
 sed
-sed 's/PLACEHOLDER EMAIL TEXT/acualemail@gmail.com/' <file>
+sed 's/PLACEHOLDER EMAIL TEXT/actualemail@gmail.com/' <file>
 ```
 Find and replace text (similar to vims find and replace)
 
@@ -222,8 +237,10 @@ Can be placed into zshrc or bashrc, available every session
 
 ```bash
 !!
+sudo !!
 ```
 Returns previous command
+Returns previous command with superuser escalation
 
 ```bash
 ssh <user>@<host>/<ip>
