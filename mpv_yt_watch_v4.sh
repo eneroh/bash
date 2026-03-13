@@ -35,7 +35,7 @@ else
 	    echo "cache: $cache"
 	    result=$(ls | grep -i "$search")
 	    echo "result: $result"
-	    #mpv "$result" --ytdl-format="bestvideo[ext=webm][height=480]+bestaudio[ext=webm]"
+	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=480]+bestaudio[ext=webm]"
     ;;
     "3")
 	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
