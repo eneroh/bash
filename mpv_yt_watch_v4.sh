@@ -5,6 +5,7 @@
 # - Need for url validation no longer required
 # - Removed unnecessary usage of caching to stdoutput and stderr
 # - Addition of 240p resolution option
+# - Change over from search variable grep to cache variable grep, allowing for all language support (korean, japanese etc.)
 
 echo "Input search string <lowercase only>: "
 read search
@@ -23,47 +24,47 @@ else
     read resInput
     case $resInput in
     "1")
-	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
 	    echo "cache: $cache"
-	    result=$(ls | grep -i "$search")
+	    result=$(ls | grep -i "$cache")
 	    echo "search: $search"
 	    echo "result: $result"
 	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=240]+bestaudio[ext=webm]" 
     ;;
     "2")
-	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
 	    echo "cache: $cache"
-	    result=$(ls | grep -i "$search")
+	    result=$(ls | grep -i "$cache")
 	    echo "result: $result"
 	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=480]+bestaudio[ext=webm]"
     ;;
     "3")
-	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
 	    echo "cache: $cache"
 	    echo "$search"
-	    result=$(ls | grep -i "$search")
+	    result=$(ls | grep -i "$cache")
 	    echo "result: $result"
 	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=720]+bestaudio[ext=webm]" 
     ;;
     "4")
-	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
 	    echo "cache: $cache"
-	    result=$(ls | grep -i "$search")
+	    result=$(ls | grep -i "$cache")
 	    echo "result: $result"
 	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=1080]+bestaudio[ext=webm]"
 
     ;;
     "5")
-	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
 	    echo "cache: $cache"
-	    result=$(ls | grep -i "$search")
+	    result=$(ls | grep -i "$cache")
 	    echo "result: $result"
 	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=1440]+bestaudio[ext=webm]" 
     ;;
     "6")
-	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
 	    echo "cache: $cache"
-	    result=$(ls | grep -i "$search")
+	    result=$(ls | grep -i "$cache")
 	    echo "result: $result"
 	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=2160]+bestaudio[ext=webm]" 
     ;;
@@ -71,18 +72,17 @@ else
 	    echo "Please enter a valid input!"
     esac
   elif [[ "$resConfirm" == [A-za-Z] ]]; then
-    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
     echo "cache: $cache"
-    result=$(ls | grep -i "$search")
+    result=$(ls | grep -i "$cache")
     echo "result: $result"
     mpv "$result"
   
   else
-    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{10\}$//')
+    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
     echo "cache: $cache"
-    result=$(ls | grep -i "$search")
+    result=$(ls | grep -i "$cache")
     echo "result: $result"
-    sleep 5
     mpv "$result"
   fi
 fi
