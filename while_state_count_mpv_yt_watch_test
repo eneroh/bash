@@ -1,0 +1,95 @@
+#!/bin/bash
+
+### mpv-yt-watch.sh ###
+# - scuffed while loop to see if we can have an end scenario if a user exceed past set limit of 5 repeatedly denying the answer. Needs additional if statement to function correctly. While loop works but not to the extend I want it to.
+
+BACK TO THE DRAWING BOARD
+
+state=n
+count=0
+limit=5
+
+if [[ $limit == 5 ]]
+  exit
+while [ $state == n ] && [ $count -le $limit ];
+do
+  echo "count: $count and state: $state and limit: $limit"
+  read -p "Input search string <Music Artist|Song|Youtuber>: " search
+  read -p "You are searching for: $search. Is this correct? [Y/n]: " state
+  count=$((count+1))
+done
+else
+if [[ -z "$search" ]]; then
+  echo "No search string inputted"
+else
+  read -p "Would you like to change the resolution? (default is dependent on video) [Y/n]: " resConfirm
+  if [[ "$resConfirm" == [Yy] ]]; then
+    echo -e "Available Resolutions: "
+    resInput=$(yt-dlp ytsearch1:"$search" --list-formats | grep -e '240p\|480p\|720p\|1080p\|1440p\|2160p' | awk '{print $14;}' | tr -d 'p,' | tr -s '\n' | uniq | nl)
+    echo "$resInput"
+    read -p "Choose resolution [1|2|3|4|5|6]: " resInput
+    case $resInput in
+    "1")
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+	    echo "cache: $cache"
+	    result=$(ls | grep -i "$cache")
+	    echo "search: $search"
+	    echo "result: $result"
+	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=240]+bestaudio[ext=webm]" 
+    ;;
+    "2")
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+	    echo "cache: $cache"
+	    result=$(ls | grep -i "$cache")
+	    echo "result: $result"
+	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=480]+bestaudio[ext=webm]"
+    ;;
+    "3")
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+	    echo "cache: $cache"
+	    echo "$search"
+	    result=$(ls | grep -i "$cache")
+	    echo "result: $result"
+	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=720]+bestaudio[ext=webm]" 
+    ;;
+    "4")
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+	    echo "cache: $cache"
+	    result=$(ls | grep -i "$cache")
+	    echo "result: $result"
+	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=1080]+bestaudio[ext=webm]"
+
+    ;;
+    "5")
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+	    echo "cache: $cache"
+	    result=$(ls | grep -i "$cache")
+	    echo "result: $result"
+	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=1440]+bestaudio[ext=webm]" 
+    ;;
+    "6")
+	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+	    echo "cache: $cache"
+	    result=$(ls | grep -i "$cache")
+	    echo "result: $result"
+	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=2160]+bestaudio[ext=webm]" 
+    ;;
+    *)
+	    echo "Please enter a valid input!"
+    esac
+  elif [[ "$resConfirm" == [A-za-Z] ]]; then
+    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+    echo "cache: $cache"
+    result=$(ls | grep -i "$cache")
+    echo "result: $result"
+    mpv "$result"
+  
+  else
+    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+    echo "cache: $cache"
+    result=$(ls | grep -i "$cache")
+    echo "result: $result"
+    mpv "$result"
+  fi
+fi
+fi
