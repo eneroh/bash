@@ -1,0 +1,116 @@
+#mode () {
+#echo -e "Mode Options
+#1) URL [Stream video, no video download to host, works endlessly]
+#2) Video Title [Downloads video locally, works once]
+#Which mode would you like to select? "
+#read -n1 modeSelect
+#}
+#mode
+
+#echo "cache: $cache"
+#result=$(ls | grep -i "$cache")
+#echo "result: $ytURL"
+#mpv $ytURL
+#
+#case $modeSelect in
+#	1) 
+#		echo -e "\nURL mode selected.\nPlease input search string [ Song | Artist | Youtuber ]: "
+#		read $search
+#		if [[ -z "$search" ]]; then
+#			echo "No search string inputted"; exit 1;
+#		else
+#			echo "Done"
+#		fi		
+#		echo "Searching for: $search"
+#	;;
+#	2)
+#		echo -e "\nVideo Title selected.\nPlease input search string [ Song | Arist | Youtuber ]: "
+#		read $search
+#		[[ -z "$search" ]] && { echo "No search string inputted"; exit 1; }
+#		echo "Searching for: $search"
+#	;;
+#esac
+
+#steamVideo () {
+#read -pn1 "Input search string [ Song | Artist | Youtuber ]: " search
+#videoUrl=$(yt-dlp --get-id ytsearch1:"$search")
+#videoUrl="https://youtube.com/watch?v=$videoUrl"
+#}
+#steamvideo
+
+#mpv --ytdl-format="bestvideo[ext=height" "$videoUrl"
+
+#search
+
+#echo "$modeSelect"
+
+#read -p "Input search string <lowercase only>: " search
+#echo "You are searching for: $search"
+#if [[ -z "$search" ]]; then
+#  echo "No search string inputted"
+#else
+#  read -p "Would you like to change the resolution? (default is dependent on video) [Y/n]: " resConfirm
+#  if [[ "$resConfirm" == [Yy] ]]; then
+#    echo -e "Available Resolutions: "
+#    resInput=$(yt-dlp ytsearch1:"$search" --list-formats | grep -e '240p\|480p\|720p\|1080p\|1440p\|2160p' | awk '{print $14;}' | tr -d 'p,' | tr -s '\n' | uniq | nl)
+#    echo "$resInput"
+#    read -p "Choose resolution [1-6]: " resInput
+#    case $resInput in
+#    "1")
+#	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+#	    echo "cache: $cache"
+#	    result=$(ls | grep -i "$cache")
+#	    echo "search: $search"
+#	    echo "result: $result"
+#	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=240]+bestaudio[ext=webm]" 
+#    ;;
+#    "2")
+#	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+#	    echo "cache: $cache"
+#	    result=$(ls | grep -i "$cache")
+#	    echo "result: $result"
+#	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=480]+bestaudio[ext=webm]"
+#    ;;
+#    "3")
+#	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+#	    echo "cache: $cache"
+#	    echo "$search"
+#	    result=$(ls | grep -i "$cache")
+#	    echo "result: $result"
+#	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=720]+bestaudio[ext=webm]" 
+#    ;;
+#    "4")
+#	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+#	    echo "cache: $cache"
+#	    result=$(ls | grep -i "$cache")
+#	    echo "result: $result"
+#	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=1080]+bestaudio[ext=webm]"
+#
+#    ;;
+#    "5")
+#	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+#	    echo "cache: $cache"
+#	    result=$(ls | grep -i "$cache")
+#	    echo "result: $result"
+#	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=1440]+bestaudio[ext=webm]" 
+#    ;;
+#    "6")
+#	    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+#	    echo "cache: $cache"
+#	    result=$(ls | grep -i "$cache")
+#	    echo "result: $result"
+#	    mpv "$result" --ytdl-format="bestvideo[ext=webm][height=2160]+bestaudio[ext=webm]" 
+#    ;;
+#    *)
+#	    echo "Please enter a valid input!"
+#    esac
+#  elif [[ "$resConfirm" == [A-za-Z] ]]; then
+#    cache=$(yt-dlp ytsearch1:"$search" | grep "Destination" | tail -n 1 | sed 's/\[download] Destination: //g' | sed 's/.\{23\}$//')
+#    echo "cache: $cache"
+#    result=$(ls | grep -i "$cache")
+#    echo "result: $result"
+#    mpv "$result"
+#  
+#  else
+#    #  fi
+#fi
