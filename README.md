@@ -92,6 +92,26 @@ List block devices
 List block devices and display the following as table information
 
 ```bash
+lspci
+```
+lLists pci devices
+
+```bash
+lshw
+```
+Lists hardware information
+
+```bash
+lscpu
+```
+Lists cpu information
+
+```bash
+dmidecode
+```
+Displays device information
+
+```bash
 lsusb
 ```
 List usb devices
