@@ -17,7 +17,7 @@ if [[ "$vpnConf" == "Connected" ]]; then
   read -rn1 -- vpnInput
   if [[ "$vpnInput" == [Yy] ]]; then
     mullvad disconnect
-    printf "%b" "\nInput movie to move: "
+    printf "%b" "\nInput media file to move: "
     read -r -- input
     fileSel=$(ls | grep -i $input | fzf)
 
