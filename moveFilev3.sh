@@ -52,7 +52,7 @@ else
 	*) exit; ;;
   esac
 
-  sudo rsync -rRP "$fileSel" anon@ubuntusrv:$loc   
+  sudo rsync -rRP "$fileSel" <ssh location>:$loc   
 fi
 
 printf "%b" "\n$fileSel has been successfully moved to server\n" >> ./moveFiles_history.txt
