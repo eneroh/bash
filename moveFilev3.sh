@@ -1,5 +1,13 @@
 #!/usr/bin/env/ bash
 
+### moveFilev3.sh ###
+# File/folder manipulation
+# Features:
+# - New vpn checking capability
+# - fzf (fuzzy finder) search capability to disregard multiple files with the same name
+# - File move recorder that pushes items to txt location for later review
+###
+
 set -euo pipefail
 
 vpnConf=$(mullvad status | grep -i "Connected")
