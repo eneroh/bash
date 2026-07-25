@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env/ bash
+
+set -euo
 
 vpnConf=$(mullvad status | grep -i "Connected")
 
