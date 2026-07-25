@@ -57,4 +57,4 @@ else
   sudo rsync -rRP "$fileSel" <ssh location>:$loc   
 fi
 
-$mfHistory
+$(mfHistory)
