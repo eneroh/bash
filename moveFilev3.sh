@@ -26,10 +26,10 @@ if [[ "$vpnConf" == "Connected" ]]; then
     read -rn1 -- location
 
     case $location in
-	1) loc=$(printf "/mass/movies") ;;
-	2) loc=$(printf "/mass/tv") ;;
-	3) loc=$(printf "/media") ;;
-	*) exit; ;;
+	  1) loc=$(printf "/mass/movies") ;;
+	  2) loc=$(printf "/mass/tv") ;;
+	  3) loc=$(printf "/media") ;;
+	  *) exit; ;;
     esac
 
     sudo rsync -rRP "$fileSel" <ssh location>:$loc
