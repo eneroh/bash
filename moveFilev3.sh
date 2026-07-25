@@ -1,6 +1,6 @@
 #!/usr/bin/env/ bash
 
-set -euo
+set -euo pipefail
 
 vpnConf=$(mullvad status | grep -i "Connected")
 
