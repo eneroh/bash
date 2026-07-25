@@ -32,7 +32,9 @@ if [[ "$vpnConf" == "Connected" ]]; then
 	*) exit; ;;
     esac
 
-    sudo rsync -rRP "$fileSel" <ssh location>:$loc 
+    sudo rsync -rRP "$fileSel" <ssh location>:$loc
+
+	mfHistory=$(printf "%b" "\n$fileSel has been successfully moved to server\n" >> ./moveFiles_history.txt)
   else
     printf "%b" "\nVPN is not disconnected, please try again later!\n"
   fi
@@ -55,4 +57,4 @@ else
   sudo rsync -rRP "$fileSel" <ssh location>:$loc   
 fi
 
-printf "%b" "\n$fileSel has been successfully moved to server\n" >> ./moveFiles_history.txt
+$mfHistory
