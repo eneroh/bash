@@ -32,7 +32,7 @@ if [[ "$vpnConf" == "Connected" ]]; then
 	*) exit; ;;
     esac
 
-    sudo rsync -rRP "$fileSel" anon@ubuntusrv:$loc 
+    sudo rsync -rRP "$fileSel" <ssh location>:$loc 
   else
     printf "%b" "\nVPN is not disconnected, please try again later!\n"
   fi
