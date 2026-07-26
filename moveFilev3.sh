@@ -57,4 +57,4 @@ else
   sudo rsync -rRP "$fileSel" <ssh location>:$loc   
 fi
 
-$(mfHistory)
+mfHistory=$(printf "%b" "\n$fileSel has been successfully moved to server\n" >> ./moveFiles_history.txt)
