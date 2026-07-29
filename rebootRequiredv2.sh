@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-check1="cat /var/run/reboot-required"
+check0="cat /var/run/reboot-required"
+check1="restart required"
 check2="cat /var/run/reboot-required.pkgs"
 
 if [[ "$check1" =~ "restart required" ]]; then
@@ -11,15 +12,15 @@ if [[ "$check1" =~ "restart required" ]]; then
   printf "%b" "Would you like to perform a reboot? [y/N]: "
   read -rn1 -- input
   if [[ "$input" == [Yy] ]]; then
-    printf "%b" "\nYour system will restart in 30secs\n"
+    printf "%b" "\nYour system will restart in 1 minute\n"
     sudo shutdown -r +1 
-    printf "Type c to cancel at any moment"
+    printf "%b" "Type c to cancel at any moment: "
     read -rn1 -- input
     if [[ "$input" == [Cc] ]]; then
       printf "%b" "\nCancelling reboot\n"
       sudo shutdown -c
     else
-      sleep 30 && reboot
+      printf "%b" "Continuing..."
     fi
   else
     exit;
