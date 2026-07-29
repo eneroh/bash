@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+### rebootRequired.sh ###
+# This bash script checks if a reboot is required
+# You will also be presented with an option to cancel a system restart, in the unlikely case you miss something prior to system restart
+
 set -euo pipefail
 
-check0="cat /var/run/reboot-required"
-check1="restart required"
+check1="cat /var/run/reboot-required"
+#check1="restart required" # uncheck for testing purposes and check the above check1
 check2="cat /var/run/reboot-required.pkgs"
 
 if [[ "$check1" =~ "restart required" ]]; then
