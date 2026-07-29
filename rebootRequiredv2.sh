@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-check1=$(cat /var/run/reboot-required)
-check2=$(cat /var/run/reboot-required.pkgs)
+check1="cat /var/run/reboot-required"
+check2="cat /var/run/reboot-required.pkgs"
 
 if [[ "$check1" =~ "restart required" ]]; then
   printf "%b" "You will need to initiate a reboot.\n"
@@ -25,5 +25,6 @@ if [[ "$check1" =~ "restart required" ]]; then
     exit;
   fi
 else
-  echo "No restart necessary, continue about your business!"
+  printf "%b" "No restart necessary, continue about your business!\n"
+  printf "%b" "Output: $check2\n"
 fi
