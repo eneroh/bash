@@ -11,7 +11,7 @@ if [[ "$wipeInput" == [Yy] ]]; then
   printf "%b" "Do you want to remove your container? [y/N]: "
   read -rn1 -- input
   if [[ "$input" == [Yy] ]]; then
-    cName=$(docker ps | awk '{print $1}' | sed 's/CONTAINER//g' | fzf)
+    cName=$(docker ps | awk '{print $1}' | sed 's/CONTAINER//g' | tail -n 2 | fzf)
     printf "%b" "\nYou have selected to remove docker container instance: $cName\n"
     printf "%b" "Stopping docker instance: $cName\n"
     sudo docker stop "$cName"
@@ -25,7 +25,7 @@ else
   printf "%b" "\nDo you want to remove your container? [y/N]: "
   read -rn1 -- input
   if [[ "$input" == [Yy] ]]; then
-    cName=$(docker ps | awk '{print $1}' | sed 's/CONTAINER//g' | fzf)
+    cName=$(docker ps | awk '{print $1}' | sed 's/CONTAINER//g' | tail -n 2 |  fzf)
     printf "%b" "\nYou have selected to remove docker container instance: $cName\n"
     printf "%b" "Stopping couchdb instance: $cName\n"
     sudo docker stop "$cName"
