@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# requires packageL fzf
+# requires package: fzf
 
 printf "%b" "Would you like to wipe your existing files? [y/N]: "
 read -rn1 -- wipeInput
