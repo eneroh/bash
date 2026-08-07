@@ -132,6 +132,19 @@ echo
 Prints text
 
 ```bash
+free
+```
+Displays ram details
+
+```bash
+df
+df -h
+```
+Displays disk information
+<br>
+Displays disk information in human readable format
+
+```bash
 cat 
 ```
 Displays contents of file
