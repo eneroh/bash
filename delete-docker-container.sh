@@ -3,9 +3,10 @@
 
 printf "%b" "Would you like to wipe your existing files? [y/N]: "
 read -rn1 -- wipeInput
-printf "%" "Input file directory to delete [/opt/couchdb or /data/]: "
-read -r -- dirInput
+
 if [[ "$wipeInput" == [Yy] ]]; then
+  printf "%b" "\nInput file directory to delete [/opt/couchdb or /data/]: "
+  read -r -- dirInput
   printf "%b" "\nSudo will be used to wipe relevant folders"
   printf "%b" "\nYou have selected to completely start fresh with your couchdb database\n"
   printf "%b" "Wiping couchdb directories: /opt/couchdb\n"
