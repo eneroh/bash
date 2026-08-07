@@ -3,7 +3,6 @@
 
 printf "%b" "Would you like to wipe your existing files? [y/N]: "
 read -rn1 -- wipeInput
-
 if [[ "$wipeInput" == [Yy] ]]; then
   printf "%b" "\nInput file directory to delete [/opt/couchdb or /data/]: "
   read -r -- dirInput
